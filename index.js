@@ -1,7 +1,7 @@
 const { v4: uuidv4 } = require("uuid");
 const multer = require("multer");
 
-const uploadMiddleware = (destination, { limitFileSize = 50 } = {}) => {
+const uploadFileMiddleware = (destination, { limitFileSize = 50 } = {}) => {
   return multer({
     storage: multer.diskStorage({
       destination(req, file, cb) {
@@ -23,4 +23,4 @@ const uploadMiddleware = (destination, { limitFileSize = 50 } = {}) => {
   });
 };
 
-module.exports = uploadMiddleware;
+module.exports = uploadFileMiddleware;
